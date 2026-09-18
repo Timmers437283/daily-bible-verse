@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Verse</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background-color: rgb(5, 5, 5);
+      color: #f5f5f5;
+      font-family: Georgia, "Times New Roman", serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    main {
+      max-width: 900px;
+    }
+
+    #verse-text {
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 24px;
+    }
+
+    #verse-reference {
+      font-family: Arial, sans-serif;
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      color: #bdbdbd;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1 id="verse-text"></h1>
+    <p id="verse-reference"></p>
+  </main>
+
+  <script>
+    const verses = [
+      {
+        text: "I can do all things through Christ which strengtheneth me.",
+        reference: "Philippians 4:13"
+      },
+      {
+        text: "The Lord is my shepherd; I shall not want.",
+        reference: "Psalm 23:1"
+      },
+      {
+        text: "For with God nothing shall be impossible.",
+        reference: "Luke 1:37"
+      },
+      {
+        text: "Trust in the Lord with all thine heart; and lean not unto thine own understanding.",
+        reference: "Proverbs 3:5"
+      },
+      {
+        text: "Be strong and of a good courage; be not afraid.",
+        reference: "Joshua 1:9"
+      },
+      {
+        text: "God is our refuge and strength, a very present help in trouble.",
+        reference: "Psalm 46:1"
+      },
+      {
+        text: "The Lord is near unto all them that call upon him.",
+        reference: "Psalm 145:18"
+      },
+      {
+        text: "Let all that you do be done in love.",
+        reference: "1 Corinthians 16:14"
+      },
+      {
+        text: "Be still, and know that I am God.",
+        reference: "Psalm 46:10"
+      },
+      {
+        text: "The joy of the Lord is your strength.",
+        reference: "Nehemiah 8:10"
+      },
+      {
+        text: "Cast all your anxiety on him because he cares for you.",
+        reference: "1 Peter 5:7"
+      },
+      {
+        text: "The Lord is good, a strong hold in the day of trouble.",
+        reference: "Nahum 1:7"
+      },
+      {
+        text: "Let your light so shine before men.",
+        reference: "Matthew 5:16"
+      },
+      {
+        text: "We love because he first loved us.",
+        reference: "1 John 4:19"
+      },
+      {
+        text: "For we walk by faith, not by sight.",
+        reference: "2 Corinthians 5:7"
+      }
+    ];
+
+    const randomIndex = Math.floor(Math.random() * verses.length);
+    const selectedVerse = verses[randomIndex];
+
+    document.getElementById("verse-text").textContent = `"${selectedVerse.text}"`;
+    document.getElementById("verse-reference").textContent = selectedVerse.reference;
+  </script>
+</body>
+</html>
